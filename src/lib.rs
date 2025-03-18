@@ -38,12 +38,12 @@ pub mod heap {
         if smallest != i {
             //swap nodes
             swap_node(heap, i, smallest);
-            //call recursively max heapify
+            //call recursively min heapify
             min_heapify(heap, smallest);
         }
     }
 
-    pub fn build_max_heap(heap: &mut Heap) {
+    pub fn build_min_heap(heap: &mut Heap) {
         heap.size = heap.arr.len();
         for i in (0..heap.arr.len() / 2).rev() {
             min_heapify(heap, i);
@@ -51,7 +51,7 @@ pub mod heap {
     }
 
     pub fn heap_sort(heap: &mut Heap) {
-        build_max_heap(heap);
+        build_min_heap(heap);
         for i in (1..heap.arr.len()).rev() {
             swap_node(heap, 0, i);
             heap.size -= 1;

@@ -17,13 +17,13 @@ fn main() {
   alen = arr.len();
   heap = heap::Heap{arr: &mut arr, size: alen};
   heap::min_heapify(&mut heap, 0);
-  println!("After Maximum Heapifying: {:?}", heap.arr);
+  println!("After Minimum Heapifying: {:?}", heap.arr);
 
   let mut arr = [4,1,3,2,16,9,10,14,8,7];
   alen = arr.len();
   heap = heap::Heap{arr: &mut arr, size: alen};
-  heap::build_max_heap(&mut heap);
-  println!("After Building The Max Heap: {:?}", heap.arr);
+  heap::build_min_heap(&mut heap);
+  println!("After Building The min Heap: {:?}", heap.arr);
 
   let mut arr = [4,1,3,2,16,9,10,14,8,7, 10, 15, 11, 13, 29, 100, 11, 14, 5, 0, 1, -7, 4, 299, 87, 39, 41, 99, 31, 54, 31, 39, 77, 69, 68, 70];
   alen = arr.len();
